@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut Rifa Salsabil - Software & Machine Learning Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            accent: '#3b82f6',
+                            purple: '#8b5cf6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #16a34a 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#hero" class="text-xl font-bold tracking-tight flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-blue-500 text-white flex items-center justify-center font-extrabold text-sm shadow-md">CRS</span>
+                <span class="gradient-text font-extrabold">Cut Rifa Salsabil</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Tentang</a>
+                <a href="#skills" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Keahlian</a>
+                <a href="#projects" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Proyek</a>
+                <a href="#experience" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Pengalaman</a>
+                <a href="#contact" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Kontak</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm" aria-label="Toggle Theme">
+                    <i id="themeIcon" class="fas fa-moon text-lg"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300" aria-label="Open Menu">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-4 space-y-3 shadow-xl">
+            <a href="#about" class="block py-2 text-base font-medium border-b border-slate-100 dark:border-slate-800">Tentang</a>
+            <a href="#skills" class="block py-2 text-base font-medium border-b border-slate-100 dark:border-slate-800">Keahlian</a>
+            <a href="#projects" class="block py-2 text-base font-medium border-b border-slate-100 dark:border-slate-800">Proyek</a>
+            <a href="#experience" class="block py-2 text-base font-medium border-b border-slate-100 dark:border-slate-800">Pengalaman</a>
+            <a href="#contact" class="block py-2 text-base font-medium">Kontak</a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-16">
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-[90vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <!-- Background Glow FX -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+            <div class="absolute top-1/3 right-10 w-80 h-80 bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-semibold shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Ready for New Opportunities & Innovations
+                </div>
+
+                <!-- Main Greeting -->
+                <div class="space-y-4">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+                        Halo, Saya <span class="gradient-text">Cut Rifa Salsabil</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-medium text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                        Informatics Engineering Graduate & Software / Machine Learning Engineer
+                    </p>
+                </div>
+
+                <!-- Highlights Badge Pill Grid -->
+                <div class="flex flex-wrap justify-center gap-3 pt-2 max-w-3xl mx-auto">
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-sm">
+                        <i class="fas fa-graduation-cap text-emerald-500"></i>
+                        <span class="font-medium">Cum Laude (IPK 3.83)</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-sm">
+                        <i class="fas fa-award text-amber-500"></i>
+                        <span class="font-medium">Best Student Bangkit Academy </span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-sm">
+                        <i class="fas fa-cloud text-blue-500"></i>
+                        <span class="font-medium">Asah Alumna</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold shadow-lg shadow-emerald-600/25 transition-all transform hover:-translate-y-0.5 text-center">
+                        <i class="fas fa-folder-open mr-2"></i> Lihat Proyek
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold transition-all text-center">
+                        <i class="fas fa-paper-plane mr-2 text-emerald-500"></i> Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight">Tentang Saya</h2>
+                    <div class="w-16 h-1 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5 flex justify-center">
+                        <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center group">
+                            <!-- Tag img untuk menampilkan foto -->
+                            <img src="profile.jpg" alt="Cut Rifa Salsabil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent flex items-end p-4 pointer-events-none">
+                                <p class="text-white text-xs font-semibold">Cut Rifa Salsabil | Tech Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p class="text-lg">
+                            Saya adalah lulusan Teknik Informatika dari Universitas Malikussaleh dengan predikat <span class="font-semibold text-emerald-600 dark:text-emerald-400">Cum Laude (IPK 3.83)</span>. Memiliki passion yang mendalam dalam pengembangan Machine Learning, Cloud Computing, dan Web/Software Development.
+                        </p>
+                        <p>
+                            Perjalanan akademik dan praktis saya terfokus pada pemrosesan bahasa alami (Indonesian Natural Language Processing), arsitektur layanan mikro berbasis cloud, serta pembuatan aplikasi web modern yang skalabel dan efisien.
+                        </p>
+                        <p>
+                            Sebagai alumni program Bangkit Academy dan peraih penghargaan salah satu Best Student Bangkit Academy (Cloud Computing Path), saya terbiasa memecahkan masalah kompleks, berkolaborasi dalam tim lintas disiplin, dan menerapkan solusi kecerdasan buatan untuk dampak nyata.
+                        </p>
+
+                        <div class="pt-4 grid grid-cols-2 gap-4 border-t border-slate-200 dark:border-slate-800">
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase font-semibold">Pendidikan</span>
+                                <span class="text-sm font-semibold text-slate-800 dark:text-slate-200">S1 Teknik Informatika</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-slate-400 uppercase font-semibold">Institusi</span>
+                                <span class="text-sm font-semibold text-slate-800 dark:text-slate-200">Universitas Malikussaleh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight">Keahlian & Teknologi</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">Tools dan teknologi yang biasa saya gunakan dalam membangun solusi perangkat lunak.</p>
+                    <div class="w-16 h-1 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Category 1 -->
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Programming & ML</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Python</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">JavaScript</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Scikit-learn</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">TensorFlow</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">FastAPI</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Node.js</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Express.js</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-cloud text-blue-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Cloud & Web</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Google Cloud Platform (GCP)</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">React</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Streamlit</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">HTML5 / CSS3</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">REST APIs</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Tailwind CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Tools & Environment</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Git / GitHub</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Docker</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Linux CLI</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Postman</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">VS Code</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Jupyter Notebook</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight">Proyek Unggulan</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">Beberapa karya dan riset yang telah saya kembangkan.</p>
+                    <div class="w-16 h-1 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="flex justify-center gap-2 mb-10 flex-wrap">
+                    <button onclick="filterProjects('all')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-emerald-600 text-white transition-all shadow-sm" data-filter="all">Semua</button>
+                    <button onclick="filterProjects('ml')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" data-filter="ml">Machine Learning & NLP</button>
+                    <button onclick="filterProjects('cloud')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" data-filter="cloud">Cloud & Web App</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="ml">
+                        <div class="h-48 bg-gradient-to-tr from-emerald-600 to-teal-800 p-6 flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute right-[-10px] bottom-[-10px] text-white/10 text-9xl font-black select-none">NLP</div>
+                            <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-semibold rounded-full w-max">Skripsi / Research</span>
+                            <i class="fas fa-shield-alt text-4xl text-white"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">Sistem Deteksi Disinformasi NLP</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 line-clamp-3">
+                                    Sistem klasifikasi berita hoaks/disinformasi Bahasa Indonesia menggunakan algoritma Naive Bayes & SVM, Sastrawi Stemmer, TF-IDF, serta di-deploy menggunakan Streamlit dengan akurasi >93%.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">Python</span>
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">SVM / Naive Bayes</span>
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">Streamlit</span>
+                                </div>
+                                <a href="https://github.com/CutRifa/Hoax-Detection" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500 dark:hover:border-emerald-500 font-semibold text-sm transition-colors text-center block">
+                                    Detail Proyek <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="ml">
+                        <div class="h-48 bg-gradient-to-tr from-blue-600 to-indigo-800 p-6 flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute right-[-10px] bottom-[-10px] text-white/10 text-9xl font-black select-none">AI</div>
+                            <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-semibold rounded-full w-max">Analytics & API</span>
+                            <i class="fas fa-chart-line text-4xl text-white"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold group-hover:text-blue-500 transition-colors">AI Learning Insight</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 line-clamp-3">
+                                    Platform analitik performa belajar siswa berbasis Machine Learning dengan mikroservis FastAPI dan dasbor web interaktif untuk prediksi hasil studi.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">Scikit-learn</span>
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">FastAPI</span>
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">React</span>
+                                </div>
+                                <a href="https://github.com/AI-Learning-Insight-A25-CS226/AI-Learning-Insight-Machine-Learning" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 font-semibold text-sm transition-colors text-center block">
+                                    Detail Proyek <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="cloud">
+                        <div class="h-48 bg-gradient-to-tr from-purple-600 to-pink-700 p-6 flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute right-[-10px] bottom-[-10px] text-white/10 text-9xl font-black select-none">GCP</div>
+                            <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-semibold rounded-full w-max">Cloud Capstone</span>
+                            <i class="fas fa-compass text-4xl text-white"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="text-xl font-bold group-hover:text-purple-500 transition-colors">Career Quest (CaQu)</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 line-clamp-3">
+                                    Platform eksplorasi karir interaktif untuk siswa SMA/SMK Indonesia dengan infrastruktur Google Cloud Platform dan RESTful APIs modern.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">Google Cloud</span>
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">Node.js</span>
+                                    <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-md">REST API</span>
+                                </div>
+                                <a href="https://github.com/CaQu-C242-PS046" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-purple-500 dark:hover:border-purple-500 font-semibold text-sm transition-colors text-center block">
+                                    Detail Proyek <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Penutup Projects Grid -->
+            </div> <!-- Penutup Container Projects -->
+        </section> <!-- Penutup Projects Section -->
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight">Pengalaman & Prestasi</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">Jejak langkah profesional dan akademis.</p>
+                    <div class="w-16 h-1 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-32 space-y-12">
+                    
+                    <!-- Item 1 -->
+                    <div class="relative pl-8 md:pl-10">
+                        <!-- Date Badge for Desktop -->
+                        <div class="md:absolute md:-left-36 md:top-0 md:text-right md:w-28 text-xs font-bold text-amber-500 uppercase tracking-wider mb-2 md:mb-0">
+                            2025
+                        </div>
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-amber-500 border-4 border-white dark:border-slate-950"></div>
+                        
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <h3 class="text-xl font-bold">Asah led Dicoding</h3>
+                            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Machine Learning Cohort</p>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">
+                                Berhasil Lulus Penuh (Full Graduate) dalam alur belajar Machine Learning pada program Asah yang diselenggarakan oleh Dicoding bersama Accenture. Menguasai alur kerja pemrosesan data, pemodelan statistik, evaluasi model, dan deployment model prediktif skala industri.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative pl-8 md:pl-10">
+                        <div class="md:absolute md:-left-36 md:top-0 md:text-right md:w-28 text-xs font-bold text-emerald-500 uppercase tracking-wider mb-2 md:mb-0">
+                            2024 - 2025
+                        </div>
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-slate-950"></div>
+                        
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <span class="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-full mb-2">Graduate with Distinction</span>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka</h3>
+                            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Cloud Computing Cohort</p>
+                            <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm mt-3 space-y-1">
+                                <li>Mempelajari arsitektur Google Cloud Platform (GCP), App Engine, Cloud Functions, dan Compute Engine.</li>
+                                <li>Mengembangkan RESTful API scalable menggunakan Node.js/Express.js.</li>
+                                <li>Membangun Capstone Project berupa platform aplikasi interaktif (Career Quest / CaQu) untuk siswa sekolah menengah.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative pl-8 md:pl-10">
+                        <div class="md:absolute md:-left-36 md:top-0 md:text-right md:w-28 text-xs font-bold text-blue-500 uppercase tracking-wider mb-2 md:mb-0">
+                            Tugas Akhir
+                        </div>
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-slate-950"></div>
+                        
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <h3 class="text-xl font-bold">Riset NLP & Tugas Akhir Sarjana</h3>
+                            <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Universitas Malikussaleh</p>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-3">
+                                Meneliti efektivitas kombinasi ekstraksi fitur TF-IDF dan algoritma supervised learning (SVM & Naive Bayes) dalam mendeteksi hoaks teks Bahasa Indonesia. Meraih tingkat akurasi tinggi (>93%) serta kelulusan predikat Cum Laude.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white dark:bg-slate-900/50 border-t border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight">Hubungi Saya</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">Mari berdiskusi mengenai proyek, ide, atau peluang kerja sama.</p>
+                    <div class="w-16 h-1 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-10">
+                    <!-- Contact Info -->
+                    <div class="md:col-span-5 space-y-6">
+                        <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+                            <h3 class="text-xl font-bold mb-4">Informasi Kontak</h3>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-xs text-slate-400 uppercase font-semibold">Email</p>
+                                    <a href="mailto:cutrifasalsabil@gmail.com" class="text-sm font-semibold hover:text-emerald-500 transition-colors break-all">cutrifasalsabil@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-xs text-slate-400 uppercase font-semibold">LinkedIn</p>
+                                    <a href="https://www.linkedin.com/in/cut-rifa-salsabil-2ba789327/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:text-blue-500 transition-colors break-all">linkedin.com/in/cut-rifa-salsabil</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="text-xs text-slate-400 uppercase font-semibold">GitHub</p>
+                                    <a href="https://github.com/CutRifa" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:text-purple-500 transition-colors break-all">github.com/CutRifa</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Download Resume Button -->
+                        <a href="CV_Cut_Rifa_Salsabil.pdf" download="CV_Cut_Rifa_Salsabil.pdf" class="w-full py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white text-white dark:text-slate-900 font-semibold shadow-md transition-all flex items-center justify-center gap-2 text-center">
+                            <i class="fas fa-download"></i> Unduh CV / Resume (PDF)
+                        </a>
+                    </div>
+
+                    <!-- Contact Form Simulation -->
+                    <div class="md:col-span-7">
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-1">Nama Lengkap</label>
+                                <input type="text" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-1">Alamat Email</label>
+                                <input type="email" required placeholder="email@contoh.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-1">Pesan</label>
+                                <textarea rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all text-sm resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-sm text-slate-500">
+        <p>&copy; 2026 Cut Rifa Salsabil. All rights reserved.</p>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xl w-8 h-8 rounded-lg flex items-center justify-center">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Content inserted via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert / Toast Component -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 text-sm font-semibold">
+        <i class="fas fa-check-circle text-emerald-400 dark:text-emerald-600 text-lg"></i>
+        <span id="toastMsg">Pesan berhasil dikirim!</span>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on Click Link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project Filtering
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.project-card');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-emerald-600', 'text-white');
+                    btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                } else {
+                    btn.classList.remove('bg-emerald-600', 'text-white');
+                    btn.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact Form Handling Simulation
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            showToast("Pesan Anda telah berhasil terkirim!");
+            event.target.reset();
+        }
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = message;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
